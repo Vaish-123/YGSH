@@ -1,0 +1,28 @@
+/* sidebar.component.scss */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.mat-expansion-panel-header {
+  padding: 0 16px;
+}
+
+.mat-list-item {
+  cursor: pointer;
+}
+
+.active-link {
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}

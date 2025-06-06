@@ -1,0 +1,32 @@
+<!-- sidebar.component.html -->
+<mat-sidenav mode="side" opened class="sidebar" role="navigation" aria-label="Main navigation">
+  <mat-toolbar color="primary" class="sidebar-header">
+    Menu
+  </mat-toolbar>
+
+  <mat-nav-list>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Users</mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list-item routerLink="/home/users" routerLinkActive="active-link">
+        User List
+      </mat-list-item>
+      <mat-list-item routerLink="/home/users/create" routerLinkActive="active-link">
+        Add User
+      </mat-list-item>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Settings</mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list-item routerLink="/home/settings/profile" routerLinkActive="active-link">
+        Profile
+      </mat-list-item>
+      <mat-list-item routerLink="/home/settings/preferences" routerLinkActive="active-link">
+        Preferences
+      </mat-list-item>
+    </mat-expansion-panel>
+  </mat-nav-list>
+</mat-sidenav>
