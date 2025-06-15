@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './material.module';
 
 @NgModule({
@@ -8,13 +9,17 @@ import { MaterialModule } from './material.module';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        MaterialModule
+        MaterialModule,
+        NgbDatepickerModule,
+        ReactiveFormsModule
     ],
     exports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        MaterialModule
+        MaterialModule,
+        NgbDatepickerModule,
+        ReactiveFormsModule
     ]
 })
 
