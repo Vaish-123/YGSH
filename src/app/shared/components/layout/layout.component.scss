@@ -1,16 +1,13 @@
 .layout {
   display: flex;
-  height: 100vh; /* full viewport height */
-}
-
-app-sidebar {
-  flex: 0 0 260px; /* fixed width sidebar */
+  width: 100vw;
   height: 100vh;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .layout-content {
-  flex: 1; /* take remaining space */
-  overflow-y: auto;
+  flex-grow: 1;
   padding: 1rem;
+  overflow-y: auto;
+  transition: margin 0.2s ease;
 }

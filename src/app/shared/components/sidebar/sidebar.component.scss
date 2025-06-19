@@ -1,13 +1,27 @@
 .sidebar {
   width: 260px;
   height: 100vh;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
   background: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: width 0.2s ease;
   display: flex;
   flex-direction: column;
+
+  &.collapsed {
+    width: 70px;
+
+    span,
+    .mat-expansion-panel-content {
+      display: none !important;
+    }
+  }
 }
 
 .sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 600;
   font-size: 1.25rem;
   text-align: center;
@@ -24,33 +38,6 @@
 .active-link {
   background-color: rgba(0, 0, 0, 0.1);
   font-weight: bold;
-}
-
-.sidebar {
-  width: 260px;
-  height: 100vh;
-  transition: width 0.2s ease;
-  overflow-x: hidden;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  background: #fff;
-
-  &.collapsed {
-    width: 70px;
-
-    span {
-      display: none !important;
-    }
-
-    .mat-expansion-panel-content {
-      display: none !important;
-    }
-  }
-}
-
-.sidebar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .mat-icon {
