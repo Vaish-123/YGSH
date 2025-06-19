@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../modules/shared.module';
 
@@ -10,5 +10,10 @@ import { SharedModule } from '../../modules/shared.module';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
+  @Input() collapsed = false;
+  @Output() toggleSidebar: EventEmitter<void> = new EventEmitter<void>();
 
+  onToggle() {
+    this.toggleSidebar.emit();
+  }
 }

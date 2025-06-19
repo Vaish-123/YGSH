@@ -1,32 +1,46 @@
-<!-- sidebar.component.html -->
-<mat-sidenav mode="side" opened class="sidebar" role="navigation" aria-label="Main navigation">
+<mat-sidenav mode="side" opened class="sidebar" [class.collapsed]="collapsed" aria-label="Main navigation">
   <mat-toolbar color="primary" class="sidebar-header">
-    Menu
+    <span *ngIf="!collapsed">Menu</span>
+    <button mat-icon-button (click)="onToggle()" aria-label="Toggle Sidebar">
+      <mat-icon>{{ collapsed ? 'chevron_right' : 'chevron_left' }}</mat-icon>
+    </button>
   </mat-toolbar>
 
   <mat-nav-list>
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="!collapsed">
       <mat-expansion-panel-header>
-        <mat-panel-title>Users</mat-panel-title>
+        <mat-panel-title>
+          <mat-icon>group</mat-icon>
+          <span *ngIf="!collapsed">Users</span>
+        </mat-panel-title>
       </mat-expansion-panel-header>
-      <mat-list-item routerLink="/home/users" routerLinkActive="active-link">
-        User List
-      </mat-list-item>
-      <mat-list-item routerLink="/home/users/create" routerLinkActive="active-link">
-        Add User
-      </mat-list-item>
+
+      <a mat-list-item routerLink="/home/main/userList" routerLinkActive="active-link">
+        <mat-icon class="me-2">list</mat-icon>
+        <span *ngIf="!collapsed">User List</span>
+      </a>
+      <a mat-list-item routerLink="/home/main/userDetails" routerLinkActive="active-link">
+        <mat-icon class="me-2">person_add</mat-icon>
+        <span *ngIf="!collapsed">Add User</span>
+      </a>
     </mat-expansion-panel>
 
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="!collapsed">
       <mat-expansion-panel-header>
-        <mat-panel-title>Settings</mat-panel-title>
+        <mat-panel-title>
+          <mat-icon>settings</mat-icon>
+          <span *ngIf="!collapsed">Settings</span>
+        </mat-panel-title>
       </mat-expansion-panel-header>
-      <mat-list-item routerLink="/home/settings/profile" routerLinkActive="active-link">
-        Profile
-      </mat-list-item>
-      <mat-list-item routerLink="/home/settings/preferences" routerLinkActive="active-link">
-        Preferences
-      </mat-list-item>
+
+      <a mat-list-item routerLink="/home/settings/profile" routerLinkActive="active-link">
+        <mat-icon class="me-2">person</mat-icon>
+        <span *ngIf="!collapsed">Profile</span>
+      </a>
+      <a mat-list-item routerLink="/home/settings/preferences" routerLinkActive="active-link">
+        <mat-icon class="me-2">tune</mat-icon>
+        <span *ngIf="!collapsed">Preferences</span>
+      </a>
     </mat-expansion-panel>
   </mat-nav-list>
 </mat-sidenav>
