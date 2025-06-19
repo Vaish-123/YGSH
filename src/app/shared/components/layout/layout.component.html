@@ -1,8 +1,14 @@
 <div class="layout">
-  <app-sidebar></app-sidebar>
+  <app-sidebar [collapsed]="sidebarCollapsed" (toggleSidebar)="toggleSidebar()"></app-sidebar>
 
   <div class="layout-content">
     <!-- Header will go here -->
     <router-outlet></router-outlet>
+
+    <!-- Spinner -->
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#be7777" type="ball-clip-rotate-multiple"
+      [fullScreen]="true">
+      <!-- <p class="mt-5" style="color: white"> Loading... </p> -->
+    </ngx-spinner>
   </div>
 </div>
